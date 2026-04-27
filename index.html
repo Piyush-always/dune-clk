@@ -44,7 +44,7 @@
   <!-- ============== NAVBAR ============== -->
   <header id="navbar" class="fixed inset-x-0 top-0 z-50 transition-colors duration-200">
     <div class="container-page flex h-16 items-center justify-between md:h-20">
-      <a href="#" class="text-base font-semibold tracking-tight">invengic</a>
+      <a href="#" class="text-xl md:text-2xl font-semibold tracking-tight">invengic</a>
 
       <nav class="hidden items-center gap-8 md:flex" aria-label="Primary">
         <a href="#product" class="nav-link">Product</a>
@@ -53,7 +53,7 @@
         <a href="#features" class="nav-link">Features</a>
       </nav>
 
-      <a href="#cta" class="hidden md:inline-flex btn btn-primary">Pre-order</a>
+      <a href="#" data-preorder-open class="hidden md:inline-flex btn btn-primary">Pre-order</a>
 
       <button id="menu-toggle" class="md:hidden h-10 w-10 inline-flex items-center justify-center rounded-full hover:bg-neutral-100" aria-label="Toggle menu" aria-expanded="false">
         <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -66,7 +66,7 @@
         <a href="#how-it-works" class="text-base">How it works</a>
         <a href="#details" class="text-base">Details</a>
         <a href="#features" class="text-base">Features</a>
-        <a href="#cta" class="btn btn-primary self-start">Pre-order</a>
+        <a href="#" data-preorder-open class="btn btn-primary self-start">Pre-order</a>
       </div>
     </div>
   </header>
@@ -74,17 +74,17 @@
   <main>
 
     <!-- ============== HERO ============== -->
-    <section id="product" class="relative overflow-hidden pt-32 md:pt-40">
+    <section id="product" class="relative overflow-hidden pt-24 md:pt-28">
       <div class="container-page text-center">
         <p class="eyebrow reveal">Engineering Light. Defining Time.</p>
-        <h1 class="reveal mt-6 text-5xl font-semibold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
+        <h1 class="reveal mt-6 text-4xl font-semibold leading-[1.05] tracking-tight md:text-5xl lg:text-6xl">
           Time, reimagined<br />in depth and light.
         </h1>
-        <p class="reveal mx-auto mt-6 max-w-xl text-base text-ink-600 md:text-lg">
+        <p class="reveal mx-auto mt-4 max-w-xl text-base text-ink-600 md:text-lg">
           A layered acrylic display that transforms light into depth — where time doesn't just appear, it floats.
         </p>
-        <div class="reveal mt-10 flex flex-wrap items-center justify-center gap-3">
-          <a href="#cta" class="btn btn-primary">Pre-order Now</a>
+        <div class="reveal mt-8 flex flex-wrap items-center justify-center gap-3">
+          <a href="#" data-preorder-open class="btn btn-primary">Pre-order Now</a>
           <a href="#video" class="btn btn-ghost">
             <span class="play-dot"><svg viewBox="0 0 12 12" class="h-2.5 w-2.5 fill-current"><path d="M3 2l7 4-7 4z"/></svg></span>
             Watch Video
@@ -92,9 +92,9 @@
         </div>
 
         <!-- Hero product slot -->
-        <div class="reveal mx-auto mt-16 max-w-4xl md:mt-24">
+        <div class="reveal mx-auto mt-10 max-w-6xl md:mt-14">
           <div class="float-loop">
-            <div class="media-slot aspect-[16/9]">
+            <div class="media-slot aspect-[16/8]">
               <video
                 src="assets/hero-video.mp4"
                 poster="assets/product%20improved.png"
@@ -361,7 +361,7 @@
           <div class="reveal">
             <h2 class="text-4xl font-semibold tracking-tight md:text-5xl">Experience time,<br />redefined.</h2>
             <div class="mt-8 flex flex-wrap gap-3">
-              <a href="#" class="btn btn-primary">Pre-order Now</a>
+              <a href="#" data-preorder-open class="btn btn-primary">Pre-order Now</a>
               <a href="#" class="btn btn-secondary">Get Updates</a>
             </div>
           </div>
@@ -424,6 +424,47 @@
       </div>
     </div>
   </footer>
+
+  <!-- ============== PRE-ORDER MODAL ============== -->
+  <div id="preorder-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="preorder-title">
+    <div class="modal-backdrop" data-preorder-close></div>
+
+    <div class="glass-card" role="document">
+      <button type="button" class="modal-close" aria-label="Close" data-preorder-close>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+
+      <div class="glass-card-image">
+        <img src="assets/product%20improved.png" alt="invengic clock" />
+      </div>
+
+      <div class="glass-card-body">
+        <p class="eyebrow">Limited first batch</p>
+        <h3 id="preorder-title" class="glass-card-title">Reserve your invengic.</h3>
+        <p class="glass-card-desc">
+          Pre-order today and be among the first to experience time, redefined. Hand-assembled in small batches.
+        </p>
+
+        <div class="glass-card-price">
+          <span class="price-label">Pre-order price</span>
+          <span class="price-value">₹1,799</span>
+        </div>
+
+        <!-- Razorpay Payment Button — replace data-payment_button_id with the ID from your Razorpay dashboard -->
+        <div class="glass-card-cta">
+          <form>
+            <script
+              src="https://checkout.razorpay.com/v1/payment-button.js"
+              data-payment_button_id="pl_SiK3mJMLHTe1kE"
+              async
+            ></script>
+          </form>
+        </div>
+
+        <p class="glass-card-fineprint">Secure payment via Razorpay · Refundable until shipping.</p>
+      </div>
+    </div>
+  </div>
 
   <script src="main.js" defer></script>
 </body>

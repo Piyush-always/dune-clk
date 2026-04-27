@@ -61,6 +61,31 @@
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
+  /* ---------- Pre-order modal ---------- */
+  const modal = document.getElementById("preorder-modal");
+  if (modal) {
+    const openers = document.querySelectorAll("[data-preorder-open]");
+    const closers = modal.querySelectorAll("[data-preorder-close]");
+
+    const openModal = (e) => {
+      if (e) e.preventDefault();
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+    };
+    const closeModal = () => {
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+    };
+
+    openers.forEach((b) => b.addEventListener("click", openModal));
+    closers.forEach((b) => b.addEventListener("click", closeModal));
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+    });
+  }
+
   /* ---------- Mobile menu ---------- */
   const toggle = document.getElementById("menu-toggle");
   const panel = document.getElementById("mobile-panel");
