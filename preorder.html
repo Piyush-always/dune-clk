@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>invengic — Pre-order</title>
+  <meta name="description" content="Pre-order invengic, a layered acrylic LED clock that transforms light into depth. A quiet object for precise time." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- TODO: replace canonical + og:url + og:image with real deployed domain -->
+  <link rel="canonical" href="https://invengic.com/preorder.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="product" />
+  <meta property="og:site_name" content="invengic" />
+  <meta property="og:title" content="Pre-order invengic — from ₹4,999" />
+  <meta property="og:description" content="Reserve your invengic. Layered acrylic LED clock — a quiet object for precise time." />
+  <meta property="og:url" content="https://invengic.com/preorder.html" />
+  <meta property="og:image" content="https://invengic.com/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pre-order invengic — from ₹4,999" />
+  <meta name="twitter:description" content="Reserve your invengic. Layered acrylic LED clock — a quiet object for precise time." />
+  <meta name="twitter:image" content="https://invengic.com/assets/og-image.png" />
+
+  <!-- Product structured data (3 SKUs) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "invengic",
+    "description": "A layered acrylic LED clock that transforms light into depth. A quiet object for precise time.",
+    "brand": { "@type": "Brand", "name": "invengic" },
+    "image": "https://invengic.com/assets/og-image.png",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "invengic Classic — Time display",
+        "price": "4999",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/PreOrder",
+        "url": "https://invengic.com/preorder.html"
+      },
+      {
+        "@type": "Offer",
+        "name": "invengic Pro — Alarm, Timer, World clock, Bluetooth app",
+        "price": "7999",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/PreOrder",
+        "url": "https://invengic.com/preorder.html"
+      },
+      {
+        "@type": "Offer",
+        "name": "invengic Ultra — Pro features + Voice assistance",
+        "price": "9999",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/PreOrder",
+        "url": "https://invengic.com/preorder.html"
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="preorder.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="invengic homepage">invengic</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html#product">Product</a>
+      <a href="index.html#how-it-works">How it works</a>
+      <a href="index.html#details">Details</a>
+      <a href="index.html#features">Features</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="product-view" aria-label="Pre-order invengic">
+      <div class="product-media" aria-live="polite">
+        <div class="image-stage" data-color="metal">
+          <img id="product-image" src="assets/product%20improved.png" alt="invengic in Metal, Model A" />
+        </div>
+      </div>
+
+      <div class="purchase-panel" id="preorder-form">
+        <div class="product-copy">
+          <p class="kicker">Layered acrylic LED clock</p>
+          <h1>invengic</h1>
+          <p class="tagline">A quiet object for precise time.</p>
+        </div>
+
+        <fieldset class="option-group">
+          <legend>Finishing</legend>
+          <div class="swatch-list" role="radiogroup" aria-label="Choose finishing">
+            <button class="swatch is-selected" type="button" role="radio" data-color="metal" aria-checked="true">
+              <span class="swatch-dot swatch-metal"></span>
+              <span>Metallic</span>
+            </button>
+            <button class="swatch" type="button" role="radio" data-color="wood" aria-checked="false">
+              <span class="swatch-dot swatch-wood"></span>
+              <span>Wooden</span>
+            </button>
+            <button class="swatch" type="button" role="radio" data-color="ceramic" aria-checked="false">
+              <span class="swatch-dot swatch-ceramic"></span>
+              <span>Ceramic</span>
+            </button>
+          </div>
+        </fieldset>
+
+        <fieldset class="option-group">
+          <legend>Model <a href="index.html#compare" class="legend-link">Compare</a></legend>
+          <div class="model-list" role="radiogroup" aria-label="Choose model">
+            <button class="model-card is-selected" type="button" role="radio" data-model="a" aria-checked="true">
+              <span class="model-name">Classic</span>
+              <span class="model-desc">Time display</span>
+              <span class="model-detail">₹4,999</span>
+            </button>
+            <button class="model-card" type="button" role="radio" data-model="b" aria-checked="false">
+              <span class="model-name">Pro</span>
+              <span class="model-desc">+ Alarm, Timer, App</span>
+              <span class="model-detail">₹7,999</span>
+            </button>
+            <button class="model-card" type="button" role="radio" data-model="c" aria-checked="false">
+              <span class="model-name">Ultra</span>
+              <span class="model-desc">+ Voice assistant</span>
+              <span class="model-detail">₹9,999</span>
+            </button>
+          </div>
+
+          <div class="model-details" id="model-details">
+            <button type="button" class="model-details-toggle" id="model-details-toggle" aria-expanded="false" aria-controls="model-details-panel">
+              <span>Feature details</span>
+              <span class="model-details-chevron" aria-hidden="true">▾</span>
+            </button>
+            <div id="model-details-panel" class="model-details-panel">
+              <div class="model-details-inner">
+                <ul id="model-details-features"></ul>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <input type="hidden" name="finishing" id="selected-color" value="Metallic" />
+        <input type="hidden" name="model" id="selected-model" value="Classic" />
+        <input type="hidden" name="price" id="selected-price" value="4999" />
+
+        <p class="price" id="price">INR 4,999</p>
+
+        <div class="razorpay-buttons" aria-live="polite">
+          <form class="razorpay-form is-active" data-model="a">
+            <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_SiK3mJMLHTe1kE" async></script>
+          </form>
+          <form class="razorpay-form" data-model="b">
+            <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_Skm2FbM7fAiY0n" async></script>
+          </form>
+          <form class="razorpay-form" data-model="c">
+            <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_Skm3hkbKoytKuu" async></script>
+          </form>
+        </div>
+
+        <p class="payment-fineprint">Secure payment via Razorpay · Refundable until shipping.</p>
+      </div>
+    </section>
+
+    <section class="thank-you" aria-live="polite" hidden>
+      <div>
+        <p class="kicker">Payment complete</p>
+        <h2>Order Confirmed</h2>
+        <p>Thank you for your purchase.</p>
+        <a class="home-button" href="index.html">Back to Home</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 invengic. Engineering light. Defining time.</p>
+    <div class="site-footer-links">
+      <a href="index.html#faqs">FAQs</a>
+      <a href="mailto:hello@invengic.com">Contact</a>
+    </div>
+  </footer>
+
+  <script src="preorder.js" defer></script>
+</body>
+</html>

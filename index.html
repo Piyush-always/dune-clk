@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -6,6 +6,25 @@
   <title>invengic — Time, reimagined.</title>
   <meta name="description" content="A layered acrylic LED clock that transforms light into depth. Engineering Light. Defining Time." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- TODO: replace canonical + og:url + og:image with real deployed domain -->
+  <link rel="canonical" href="https://invengic.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="invengic" />
+  <meta property="og:title" content="invengic — Time, reimagined." />
+  <meta property="og:description" content="A layered acrylic LED clock that transforms light into depth. Engineering Light. Defining Time." />
+  <meta property="og:url" content="https://invengic.com/" />
+  <meta property="og:image" content="https://invengic.com/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="invengic — Time, reimagined." />
+  <meta name="twitter:description" content="A layered acrylic LED clock that transforms light into depth." />
+  <meta name="twitter:image" content="https://invengic.com/assets/og-image.png" />
 
   <!-- Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,14 +65,14 @@
     <div class="container-page flex h-16 items-center justify-between md:h-20">
       <a href="#" class="text-xl md:text-2xl font-semibold tracking-tight">invengic</a>
 
-      <nav class="hidden items-center gap-8 md:flex" aria-label="Primary">
+      <nav id="primary-nav" class="hidden items-center gap-8 md:flex" aria-label="Primary">
         <a href="#product" class="nav-link">Product</a>
         <a href="#how-it-works" class="nav-link">How it works</a>
         <a href="#details" class="nav-link">Details</a>
         <a href="#features" class="nav-link">Features</a>
       </nav>
 
-      <a href="#" data-preorder-open class="hidden md:inline-flex btn btn-primary">Pre-order</a>
+      <a href="preorder.html" class="hidden md:inline-flex btn btn-primary">Pre-order</a>
 
       <button id="menu-toggle" class="md:hidden h-10 w-10 inline-flex items-center justify-center rounded-full hover:bg-neutral-100" aria-label="Toggle menu" aria-expanded="false">
         <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -66,7 +85,7 @@
         <a href="#how-it-works" class="text-base">How it works</a>
         <a href="#details" class="text-base">Details</a>
         <a href="#features" class="text-base">Features</a>
-        <a href="#" data-preorder-open class="btn btn-primary self-start">Pre-order</a>
+        <a href="preorder.html" class="btn btn-primary self-start">Pre-order</a>
       </div>
     </div>
   </header>
@@ -84,7 +103,7 @@
           A layered acrylic display that transforms light into depth — where time doesn't just appear, it floats.
         </p>
         <div class="reveal mt-8 flex flex-wrap items-center justify-center gap-3">
-          <a href="#" data-preorder-open class="btn btn-primary">Pre-order Now</a>
+          <a href="preorder.html" class="btn btn-primary">Pre-order Now</a>
           <a href="#video" class="btn btn-ghost">
             <span class="play-dot"><svg viewBox="0 0 12 12" class="h-2.5 w-2.5 fill-current"><path d="M3 2l7 4-7 4z"/></svg></span>
             Watch Video
@@ -123,7 +142,7 @@
     <section id="how-it-works" class="section-pad">
       <div class="container-page">
         <div class="mx-auto max-w-2xl text-center reveal">
-          <h2 class="text-3xl font-semibold tracking-tight md:text-4xl">How It Works</h2>
+          <h2 class="text-3xl font-semibold tracking-tight md:text-4xl">Deeply Engineered</h2>
           <p class="mt-4 text-base text-ink-600">
             Each digit is built from precision-cut acrylic layers. Only one layer is illuminated at a time, creating a floating number with real physical depth.
           </p>
@@ -354,6 +373,38 @@
       </div>
     </section>
 
+    <!-- ============== COMPARE (full width, no container) ============== -->
+    <section id="compare" class="section-pad compare-section">
+      <div class="reveal mx-auto max-w-2xl text-center px-6">
+        <p class="eyebrow">Compare</p>
+        <h2 class="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">Pick the one that fits.</h2>
+      </div>
+
+      <div class="reveal mt-12 compare-table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th scope="col"><span class="sr-only">Feature</span></th>
+              <th scope="col"><span class="compare-model">Classic</span><span class="compare-price">₹4,999</span></th>
+              <th scope="col"><span class="compare-model">Pro</span><span class="compare-price">₹7,999</span></th>
+              <th scope="col"><span class="compare-model">Ultra</span><span class="compare-price">₹9,999</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Time display</th><td>✓</td><td>✓</td><td>✓</td></tr>
+            <tr><th scope="row">Adjustable brightness</th><td>✓</td><td>✓</td><td>✓</td></tr>
+            <tr><th scope="row">USB-C powered</th><td>✓</td><td>✓</td><td>✓</td></tr>
+            <tr><th scope="row">Available finishings</th><td>Metallic · Wooden · Ceramic</td><td>Metallic · Wooden · Ceramic</td><td>Metallic · Wooden · Ceramic</td></tr>
+            <tr><th scope="row">Alarm</th><td>—</td><td>✓</td><td>✓</td></tr>
+            <tr><th scope="row">Timer</th><td>—</td><td>✓</td><td>✓</td></tr>
+            <tr><th scope="row">World clock</th><td>—</td><td>✓</td><td>✓</td></tr>
+            <tr><th scope="row">Bluetooth app support</th><td>—</td><td>✓</td><td>✓</td></tr>
+            <tr><th scope="row">Voice assistance</th><td>—</td><td>—</td><td>✓</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
     <!-- ============== FINAL CTA ============== -->
     <section id="cta" class="section-pad">
       <div class="container-page">
@@ -361,7 +412,7 @@
           <div class="reveal">
             <h2 class="text-4xl font-semibold tracking-tight md:text-5xl">Experience time,<br />redefined.</h2>
             <div class="mt-8 flex flex-wrap gap-3">
-              <a href="#" data-preorder-open class="btn btn-primary">Pre-order Now</a>
+              <a href="preorder.html" class="btn btn-primary">Pre-order Now</a>
               <a href="#" class="btn btn-secondary">Get Updates</a>
             </div>
           </div>
@@ -370,6 +421,39 @@
               <img src="assets/cta.png" alt="invengic in a lifestyle setting" loading="lazy" />
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== FAQs ============== -->
+    <section id="faqs" class="section-pad">
+      <div class="container-page">
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <p class="eyebrow">FAQs</p>
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">Your Questions</h2>
+        </div>
+
+        <div class="reveal mx-auto mt-12 max-w-2xl faq-list">
+          <details class="faq-item">
+            <summary>When will my pre-order ship?</summary>
+            <p>Pre-orders are hand-assembled in small batches and ship in the order they're received. We'll email a tracking number as soon as your unit leaves the workshop.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I cancel and get a refund?</summary>
+            <p>Yes. Pre-orders are fully refundable up until your unit ships. After shipping, returns follow our standard policy.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you ship internationally?</summary>
+            <p>We currently ship within India. International availability is on the roadmap — drop your email below to get notified.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What's the warranty?</summary>
+            <p>Every invengic ships with a 1-year manufacturer warranty covering defects in materials and workmanship.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How do I contact support?</summary>
+            <p>Email us at <a href="mailto:hello@invengic.com">hello@invengic.com</a>. We respond within 24 hours on business days.</p>
+          </details>
         </div>
       </div>
     </section>
@@ -388,7 +472,7 @@
         <div>
           <h4 class="footer-heading">Product</h4>
           <ul class="mt-4 space-y-2">
-            <li><a href="#" class="footer-link">Overview</a></li>
+            <li><a href="#product" class="footer-link">Overview</a></li>
             <li><a href="#how-it-works" class="footer-link">How it Works</a></li>
             <li><a href="#details" class="footer-link">Details</a></li>
             <li><a href="#features" class="footer-link">Features</a></li>
@@ -397,10 +481,10 @@
         <div>
           <h4 class="footer-heading">Support</h4>
           <ul class="mt-4 space-y-2">
-            <li><a href="#" class="footer-link">FAQs</a></li>
+            <li><a href="#faqs" class="footer-link">FAQs</a></li>
             <li><a href="#" class="footer-link">Shipping</a></li>
             <li><a href="#" class="footer-link">Returns</a></li>
-            <li><a href="#" class="footer-link">Contact</a></li>
+            <li><a href="mailto:hello@invengic.com" class="footer-link">Contact</a></li>
           </ul>
         </div>
         <div>
@@ -419,52 +503,11 @@
         <div class="flex gap-6">
           <a href="#" class="hover:text-ink-900">Privacy</a>
           <a href="#" class="hover:text-ink-900">Terms</a>
-          <a href="#" class="hover:text-ink-900">Contact</a>
+          <a href="mailto:hello@invengic.com" class="hover:text-ink-900">Contact</a>
         </div>
       </div>
     </div>
   </footer>
-
-  <!-- ============== PRE-ORDER MODAL ============== -->
-  <div id="preorder-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="preorder-title">
-    <div class="modal-backdrop" data-preorder-close></div>
-
-    <div class="glass-card" role="document">
-      <button type="button" class="modal-close" aria-label="Close" data-preorder-close>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-      </button>
-
-      <div class="glass-card-image">
-        <img src="assets/product%20improved.png" alt="invengic clock" />
-      </div>
-
-      <div class="glass-card-body">
-        <p class="eyebrow">Limited first batch</p>
-        <h3 id="preorder-title" class="glass-card-title">Reserve your invengic.</h3>
-        <p class="glass-card-desc">
-          Pre-order today and be among the first to experience time, redefined. Hand-assembled in small batches.
-        </p>
-
-        <div class="glass-card-price">
-          <span class="price-label">Pre-order price</span>
-          <span class="price-value">₹4,999</span>
-        </div>
-
-        <!-- Razorpay Payment Button — replace data-payment_button_id with the ID from your Razorpay dashboard -->
-        <div class="glass-card-cta">
-          <form>
-            <script
-              src="https://checkout.razorpay.com/v1/payment-button.js"
-              data-payment_button_id="pl_SiK3mJMLHTe1kE"
-              async
-            ></script>
-          </form>
-        </div>
-
-        <p class="glass-card-fineprint">Secure payment via Razorpay · Refundable until shipping.</p>
-      </div>
-    </div>
-  </div>
 
   <script src="main.js" defer></script>
 </body>
