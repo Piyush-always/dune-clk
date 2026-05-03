@@ -12,6 +12,12 @@
     ceramic: "Ceramic",
   };
 
+  const finishingImages = {
+    metal: "assets/metalic.png",
+    wood: "assets/wooden.png",
+    ceramic: "assets/ceramic.png",
+  };
+
   const models = {
     a: {
       label: "Classic",
@@ -21,11 +27,6 @@
         "Adjustable brightness",
         "USB-C powered",
       ],
-      image: {
-        metal: "assets/product%20improved.png",
-        wood: "assets/cta.png",
-        ceramic: "assets/product.png",
-      },
     },
     b: {
       label: "Pro",
@@ -39,11 +40,6 @@
         "World clock",
         "Bluetooth app support",
       ],
-      image: {
-        metal: "assets/engineering%20lighting.png",
-        wood: "assets/acrylic%20glass.png",
-        ceramic: "assets/closeup.png",
-      },
     },
     c: {
       label: "Ultra",
@@ -58,11 +54,6 @@
         "Bluetooth app support",
         "Voice assistance",
       ],
-      image: {
-        metal: "assets/exploded.png",
-        wood: "assets/top%20view%20.png",
-        ceramic: "assets/buttons.png",
-      },
     },
   };
 
@@ -112,19 +103,20 @@
     });
   };
 
-  const updateSelection = () => {
+  const updateSelection = (options = {}) => {
     const model = models[state.model];
-    const nextImage = model.image[state.color];
+    const nextImage = finishingImages[state.color];
+    const animateImage = options.animateImage !== false;
 
     setPressedState("[data-color]", "color", state.color);
     setPressedState("[data-model]", "model", state.model);
     imageStage.dataset.color = state.color;
-    imageStage.classList.add("is-changing");
+    if (animateImage) imageStage.classList.add("is-changing");
     priceEl.classList.add("is-changing");
     renderModelDetails();
     setActiveRazorpay();
 
-    window.setTimeout(() => {
+    const apply = () => {
       productImage.src = nextImage;
       productImage.alt = `invengic in ${colors[state.color]}, ${model.label}`;
       priceEl.textContent = formatPrice(model.price);
@@ -133,7 +125,13 @@
       priceInput.value = String(model.price);
       imageStage.classList.remove("is-changing");
       priceEl.classList.remove("is-changing");
-    }, 160);
+    };
+
+    if (animateImage) {
+      window.setTimeout(apply, 160);
+    } else {
+      apply();
+    }
   };
 
   detailsToggle.addEventListener("click", () => {
@@ -158,7 +156,7 @@
   document.querySelectorAll("[data-model]").forEach((button) => {
     button.addEventListener("click", () => {
       state.model = button.dataset.model;
-      updateSelection();
+      updateSelection({ animateImage: false });
     });
   });
 
