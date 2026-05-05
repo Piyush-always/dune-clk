@@ -78,6 +78,28 @@
     );
   }
 
+  /* ---------- Lazy-load videos (defer download until in viewport) ---------- */
+  const lazyVideos = document.querySelectorAll("video.lazy-video[data-src]");
+  if (lazyVideos.length && "IntersectionObserver" in window) {
+    const vio = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const v = entry.target;
+        if (!v.src) {
+          v.src = v.dataset.src;
+          v.load();
+          const tryPlay = v.play();
+          if (tryPlay && typeof tryPlay.catch === "function") tryPlay.catch(() => {});
+        }
+        vio.unobserve(v);
+      });
+    }, { rootMargin: "300px 0px" });
+    lazyVideos.forEach((v) => vio.observe(v));
+  } else {
+    // Fallback for old browsers — load immediately
+    lazyVideos.forEach((v) => { v.src = v.dataset.src; v.load(); v.play().catch(() => {}); });
+  }
+
   /* ---------- Image sliders (auto-rotate) ---------- */
   document.querySelectorAll(".image-slider").forEach((slider) => {
     const slides = Array.from(slider.querySelectorAll(".image-slider-slide"));

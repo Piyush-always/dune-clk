@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(python -m http.server 5500)",
-      "PowerShell(if \\(-not \\(Test-Path \"dunewatch-old\"\\)\\) { New-Item -ItemType Directory -Path \"dunewatch-old\" | Out-Null }; Move-Item -Path \"react-vite-website\" -Destination \"dunewatch-old\\\\\" -Force; Move-Item -Path \"content\" -Destination \"dunewatch-old\\\\\" -Force; Get-ChildItem | Select-Object Name, Mode)"
+      "PowerShell(if \\(-not \\(Test-Path \"dunewatch-old\"\\)\\) { New-Item -ItemType Directory -Path \"dunewatch-old\" | Out-Null }; Move-Item -Path \"react-vite-website\" -Destination \"dunewatch-old\\\\\" -Force; Move-Item -Path \"content\" -Destination \"dunewatch-old\\\\\" -Force; Get-ChildItem | Select-Object Name, Mode)",
+      "Bash(ffmpeg -version)",
+      "Bash(cwebp -version)",
+      "Bash(magick -version)"
     ]
   }
 }
