@@ -21,7 +21,7 @@
   const models = {
     a: {
       label: "Classic",
-      price: 4999,
+      price: 7999,
       features: [
         "Time display",
         "Adjustable brightness",
@@ -30,7 +30,7 @@
     },
     b: {
       label: "Pro",
-      price: 7999,
+      price: 11999,
       features: [
         "Time display",
         "Adjustable brightness",
@@ -43,7 +43,7 @@
     },
     c: {
       label: "Ultra",
-      price: 9999,
+      price: 14999,
       features: [
         "Time display",
         "Adjustable brightness",
