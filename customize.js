@@ -38,7 +38,7 @@ const FIRESTORE_COLLECTION = "customize_leads";
    2. Formsubmit (kept in parallel — emails stay flowing)
    ──────────────────────────────────────────────────────────── */
 const FALLBACK_EMAIL = "clock.invengic@gmail.com";
-const CC_EMAIL = "piyushalways7@gmail.com";
+const CC_EMAIL = "piyushalways7@gmail.com,akhandjyotig@gmail.com";
 const FORMSUBMIT_ENDPOINT = `https://formsubmit.co/ajax/${FALLBACK_EMAIL}`;
 
 /* ────────────────────────────────────────────────────────────
