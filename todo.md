@@ -6,77 +6,29 @@ Living checklist of pending work. Tick items off as they ship.
 
 ## 🔥 Active: wire "Let's connect" form to Firestore
 
-Goal: replace the current Formsubmit-only flow on `customize.html` with a Firestore-backed lead store. See [customize.js](customize.js) for the existing submission logic.
+**Decisions locked:** direct browser → Firestore (option A) · keep Formsubmit running in parallel · customize page only (preorder skipped for now) · no spam protection for v1 · collection name `customize_leads` · `firestore.rules` written to repo · date-sort index included.
 
-### Inputs needed from the user (blocking)
+**Code scaffolding shipped** ✅ — all that's left is for you to do 3 things below.
 
-- [ ] **Firebase project config object** (from Firebase Console → Project Settings → Your apps → Web app → SDK setup and configuration). Looks like:
-  ```js
-  const firebaseConfig = {
-    apiKey: "AIza...",
-    authDomain: "your-project.firebaseapp.com",
-    projectId: "your-project",
-    storageBucket: "your-project.appspot.com",
-    messagingSenderId: "1234567890",
-    appId: "1:1234567890:web:abc123"
-  };
+### ⚠️ Remaining steps for you (5 min)
+
+- [ ] **Step 1 — paste your Firebase config.** Open [customize.js](customize.js), find the `firebaseConfig = {...}` block at the top, and replace the 6 `PASTE_*` placeholders with the values from Firebase Console → Project Settings → Your apps → Web app → SDK setup and configuration. Until you do this, the form falls back to Formsubmit-only and a console warning fires.
+- [ ] **Step 2 — deploy the Firestore rules.** From the repo root run:
   ```
-  *(These are safe to expose in client JS — security comes from Firestore rules.)*
-
-- [ ] **Architecture choice:**
-  - [ ] **A. Direct browser → Firestore** *(recommended — no backend, works on any static host)*
-  - [ ] **B. Browser → Cloud Function → Firestore** *(needs Firebase Blaze plan; better for server-side validation / rate limiting)*
-
-- [ ] **Firestore collection name** — default: `customize_leads`. Each submission becomes one document with: `organization`, `name`, `email`, `phone`, `brief`, `submittedAt` (server timestamp), `source`, `userAgent`, `referrer`.
-
-- [ ] **Firestore security rule deployment method:**
-  - [ ] **(a)** Write rule into a repo `firestore.rules` file → deploy via `firebase deploy --only firestore:rules`
-  - [ ] **(b)** Just give the snippet to paste into Firebase Console manually
-
-  Rule that will be applied:
+  firebase login                 # if not already logged in
+  firebase use --add             # pick your project
+  firebase deploy --only firestore:rules,firestore:indexes
   ```
-  match /customize_leads/{doc} {
-    allow create: if request.resource.data.keys().hasAll(['name','email','phone'])
-                  && request.resource.data.email is string
-                  && request.resource.data.email.size() < 200
-                  && request.resource.data.brief.size() < 5000;
-    allow read, update, delete: if false;
-  }
-  ```
+  This applies [firestore.rules](firestore.rules) (allow public create with strict validation, deny everything else) and creates the `submittedAt desc` index from [firestore.indexes.json](firestore.indexes.json) so the Firebase Console shows newest leads first.
+- [ ] **Step 3 — verify end-to-end.** Open `customize.html` in a browser → submit a test lead. Then open Firebase Console → Firestore → `customize_leads` and confirm the document appeared with all fields. Also check your `hello@invengic.com` inbox to confirm Formsubmit still emails (the parallel path).
 
-### Decisions needed (have defaults — speak up to override)
+### What got built
 
-- [ ] **Email notifications strategy:**
-  - [ ] Drop emails entirely (just check Firestore)
-  - [ ] **Keep Formsubmit running in parallel** *(default — zero risk of losing leads while verifying Firestore)*
-  - [ ] Email via Firebase "Trigger Email" Extension (cleaner long-term, needs SMTP creds)
-
-- [ ] **Preorder form too?** — `preorder.html` / `preorder.js` exists. Should preorder submissions also land in Firestore?
-  - [ ] No — leave preorder as-is
-  - [ ] Yes, **same collection** with `source: "preorder-page"` to distinguish
-  - [ ] Yes, **separate collection** `preorder_leads`
-
-- [ ] **Spam protection:**
-  - [ ] None for now
-  - [ ] **Honeypot field** *(default — invisible field that must stay empty; cheap, blocks dumb bots, no UX cost)*
-  - [ ] Cloudflare Turnstile / hCaptcha (needs site key)
-
-- [ ] **Firestore index for date sorting?**
-  - [ ] Yes — add `submittedAt desc` index in `firestore.indexes.json` so Firebase Console shows newest-first by default
-  - [ ] No
-
-### Implementation tasks (kick off once inputs above are answered)
-
-- [ ] Add Firebase JS SDK via CDN (or npm if a build step exists)
-- [ ] Initialize Firebase app + Firestore in [customize.js](customize.js)
-- [ ] Replace/augment the Formsubmit POST with `addDoc(collection(db, '<collection>'), data)`
-- [ ] Add honeypot field to the form in [customize.html](customize.html) (if chosen)
-- [ ] Add `firestore.rules` file (if option a)
-- [ ] Add `firestore.indexes.json` (if date index chosen)
-- [ ] Test: submit a test lead, confirm document appears in Firestore Console
-- [ ] Test: submit with missing required fields, confirm rule rejects
-- [ ] Test: try reading the collection from browser DevTools, confirm rule blocks
-- [ ] Update success-panel UX copy if anything changes
+- [customize.js](customize.js) — converted to ES module. Imports Firebase Web SDK v10 from gstatic CDN. Writes to Firestore + Formsubmit in parallel via `Promise.allSettled` so one failing doesn't block the other. Each document includes `name`, `email`, `phone`, `organization`, `brief`, `source: "customize-page"`, `submittedAt` (server timestamp), `userAgent`, `referrer`.
+- [customize.html](customize.html#L328) — `<script>` tag changed to `type="module"`.
+- [firestore.rules](firestore.rules) — public-create with field validation (required keys, type checks, size limits, email regex, source pinned to "customize-page"); read/update/delete blocked from client.
+- [firestore.indexes.json](firestore.indexes.json) — descending index on `submittedAt`.
+- [firebase.json](firebase.json) — wires the rules and indexes to `firebase deploy`.
 
 ---
 

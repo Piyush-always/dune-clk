@@ -1,0 +1,42 @@
+rules_version = '2';
+
+// invengic — Firestore security rules
+//
+// Deploy: `firebase deploy --only firestore:rules`
+//
+// Posture:
+// - Public can CREATE leads in `customize_leads` (the customize page form),
+//   but only with the required fields and reasonable size limits.
+// - No one can read, update, or delete from the client. Use the Firebase
+//   Console or an authenticated admin tool to view/manage leads.
+// - All other collections are locked by default.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /customize_leads/{doc} {
+      allow create: if
+        request.resource.data.keys().hasAll(['name', 'email', 'phone', 'source', 'submittedAt'])
+        && request.resource.data.name is string
+        && request.resource.data.name.size() > 0
+        && request.resource.data.name.size() < 200
+        && request.resource.data.email is string
+        && request.resource.data.email.size() < 200
+        && request.resource.data.email.matches('^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$')
+        && request.resource.data.phone is string
+        && request.resource.data.phone.size() < 50
+        && request.resource.data.brief is string
+        && request.resource.data.brief.size() < 5000
+        && request.resource.data.organization is string
+        && request.resource.data.organization.size() < 200
+        && request.resource.data.source == 'customize-page';
+
+      allow read, update, delete: if false;
+    }
+
+    // Default deny for everything else
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
