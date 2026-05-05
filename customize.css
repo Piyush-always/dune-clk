@@ -1,0 +1,493 @@
+/* ============================================================
+   invengic — customize page styles
+   Loads on top of preorder.css for shared base (header, footer,
+   buttons, info-cta, faq-item, etc.)
+   ============================================================ */
+
+.customize-main {
+  padding-top: 76px;
+  padding-bottom: 4rem;
+}
+
+.customize-shell {
+  width: min(1080px, 100%);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 3vw, 2rem);
+}
+
+.customize-shell-narrow {
+  max-width: 760px;
+}
+
+.customize-section-header {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.customize-section-header h2 {
+  margin-top: 0.6rem;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
+
+.customize-section-header p {
+  margin-top: 0.8rem;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+/* ---------- Master video (top of page) ---------- */
+.customize-master-video {
+  width: 100%;
+  margin-block: 0 4rem;
+  padding: 0;
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.88), rgba(235, 233, 228, 0.46));
+  overflow: hidden;
+}
+
+.customize-master-video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 75vh;
+  object-fit: cover;
+  background: #f8f7f4;
+}
+
+/* ---------- Six ways (brief pillar grid) ---------- */
+.customize-pillars {
+  padding-block: 4rem;
+}
+
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.pillar-card {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(17, 17, 17, 0.06);
+  transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease);
+}
+
+.pillar-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(17, 17, 17, 0.12);
+  box-shadow: var(--shadow);
+}
+
+.pillar-num {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--soft);
+  text-transform: uppercase;
+}
+
+.pillar-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.pillar-card p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+@media (max-width: 920px) {
+  .pillar-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 520px) {
+  .pillar-grid { grid-template-columns: 1fr; }
+  .pillar-card { padding: 1.2rem; }
+}
+
+/* ---------- Capability matrix ---------- */
+.customize-capability {
+  padding-block: 4rem;
+}
+
+.capability-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  padding: 1.5rem;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(17, 17, 17, 0.06);
+}
+
+.capability-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.capability-table th,
+.capability-table td {
+  padding: 1rem 0.85rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+  color: var(--ink);
+  vertical-align: middle;
+}
+
+.capability-table thead th {
+  border-bottom: 1px solid rgba(17, 17, 17, 0.18);
+  padding-bottom: 1rem;
+}
+
+.capability-table tbody th {
+  font-weight: 500;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.capability-table tbody td {
+  text-align: center;
+  font-weight: 500;
+}
+
+.capability-table tbody tr:last-child th,
+.capability-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.capability-model {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 640px) {
+  .capability-table th,
+  .capability-table td {
+    padding: 0.7rem 0.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* ---------- Process steps ---------- */
+.customize-process {
+  padding-block: 4rem;
+}
+
+.process-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.process-steps li {
+  padding: 1.5rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(17, 17, 17, 0.06);
+  display: grid;
+  gap: 0.6rem;
+}
+
+.process-num {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--soft);
+  text-transform: uppercase;
+}
+
+.process-steps h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.process-steps p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 920px) {
+  .process-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Who it's for (simplified, icon-based) ---------- */
+.customize-audience {
+  padding-block: 4rem;
+}
+
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.audience-card {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  align-items: start;
+  gap: 0.9rem;
+  padding: 1.2rem 1.3rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(17, 17, 17, 0.06);
+  transition: transform var(--ease), border-color var(--ease);
+}
+
+.audience-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(17, 17, 17, 0.12);
+}
+
+.audience-icon {
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--ink);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+.audience-card h3 {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.audience-card p {
+  margin: 0.25rem 0 0;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+@media (max-width: 720px) {
+  .audience-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 480px) {
+  .audience-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Quote callout ---------- */
+.customize-quote {
+  padding-block: 3.5rem;
+  text-align: center;
+}
+
+.customize-quote h2 {
+  margin-top: 0.6rem;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+.customize-quote p {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+/* ---------- Lead form ---------- */
+.customize-form-section {
+  padding-block: 4rem;
+}
+
+.customize-form-sub {
+  margin-top: 0.8rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.customize-form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 2rem;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.field label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.field .optional {
+  font-weight: 400;
+  color: var(--soft);
+}
+
+.field input,
+.field textarea {
+  padding: 0.75rem 0.95rem;
+  border: 1px solid rgba(17, 17, 17, 0.14);
+  border-radius: 12px;
+  background: var(--white);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color var(--ease), box-shadow var(--ease);
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible {
+  outline: none;
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.08);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.customize-form .primary-cta {
+  margin-top: 0.6rem;
+  padding: 0 1.6rem;
+}
+
+.customize-form-fineprint {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--soft);
+  line-height: 1.55;
+}
+
+.customize-form-status {
+  text-align: center;
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.85rem;
+  border-radius: 12px;
+}
+
+.customize-form-status.is-success {
+  background: rgba(110, 231, 224, 0.18);
+  color: #0d6e63;
+}
+
+.customize-form-status.is-error {
+  background: rgba(255, 138, 138, 0.18);
+  color: #b00020;
+}
+
+/* ---------- Post-submit success panel ---------- */
+.customize-form-success {
+  margin-top: 1.5rem;
+  padding: 2.25rem 2rem;
+  border-radius: 22px;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.85), rgba(245, 240, 232, 0.65));
+  text-align: center;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.32s ease, transform 0.32s ease;
+}
+
+.customize-form-success.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.customize-form-success h3 {
+  margin: 0.6rem 0 0;
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.customize-form-success p {
+  margin: 0.8rem auto 0;
+  max-width: 480px;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.customize-form-success-actions {
+  margin-top: 1.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+}
+
+@media (max-width: 520px) {
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+  .customize-form {
+    padding: 1.4rem;
+  }
+}
+
+/* ---------- FAQ ---------- */
+.customize-faq {
+  padding-block: 4rem;
+}
+
+/* (faq-item base styles inherited from preorder.css) */
+
+/* ---------- Closing actions (two-button row) ---------- */
+.customize-closing {
+  padding-block: 0 4rem;
+  text-align: center;
+}
+
+.customize-closing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+}
+
+.customize-closing .info-cta {
+  align-self: auto;
+}

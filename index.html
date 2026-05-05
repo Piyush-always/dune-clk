@@ -72,7 +72,10 @@
         <a href="#features" class="nav-link">Features</a>
       </nav>
 
-      <a href="preorder.html" class="hidden md:inline-flex btn btn-primary">Pre-order</a>
+      <div class="hidden md:inline-flex items-center gap-2">
+        <a href="customize.html" class="btn btn-customize">Customize</a>
+        <a href="preorder.html" class="btn btn-primary">Pre-order</a>
+      </div>
 
       <button id="menu-toggle" class="md:hidden h-10 w-10 inline-flex items-center justify-center rounded-full hover:bg-neutral-100" aria-label="Toggle menu" aria-expanded="false">
         <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -85,7 +88,10 @@
         <a href="#how-it-works" class="text-base">How it works</a>
         <a href="#details" class="text-base">Details</a>
         <a href="#features" class="text-base">Features</a>
-        <a href="preorder.html" class="btn btn-primary self-start">Pre-order</a>
+        <div class="flex flex-wrap gap-2">
+          <a href="customize.html" class="btn btn-customize">Customize</a>
+          <a href="preorder.html" class="btn btn-primary">Pre-order</a>
+        </div>
       </div>
     </div>
   </header>
@@ -104,6 +110,7 @@
         </p>
         <div class="reveal mt-8 flex flex-wrap items-center justify-center gap-3">
           <a href="preorder.html" class="btn btn-primary">Pre-order Now</a>
+          <a href="customize.html" class="btn btn-customize">Customize</a>
           <a href="#video" class="btn btn-ghost">
             <span class="play-dot"><svg viewBox="0 0 12 12" class="h-2.5 w-2.5 fill-current"><path d="M3 2l7 4-7 4z"/></svg></span>
             Watch Video
@@ -138,13 +145,119 @@
       </div>
     </section>
 
+    <!-- ============== INTRO VIDEO ============== -->
+    <section class="section-pad">
+      <div class="container-page">
+        <div class="reveal mx-auto max-w-6xl">
+          <div class="media-slot aspect-[16/9]">
+            <video
+              src="assets/0505.mp4"
+              autoplay muted loop playsinline preload="metadata"
+              aria-label="invengic — product showcase"
+            ></video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- ============== FEATURES STRIP ============== -->
+    <section id="features" class="section-pad">
+      <div class="container-page">
+        <div class="mx-auto max-w-2xl text-center reveal">
+          <h2 class="text-3xl font-semibold tracking-tight md:text-4xl">Features</h2>
+        </div>
+
+        <div class="mt-16 grid grid-cols-2 gap-x-6 gap-y-12 sm:grid-cols-3 lg:grid-cols-5">
+          <div class="feature reveal">
+            <span class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="6" width="14" height="12" rx="2"/><path d="M12 3v3M9 10h.01M15 10h.01M9 14c1 1 2 1.5 3 1.5s2-.5 3-1.5"/><path d="M3 12h2M19 12h2"/></svg>
+            </span>
+            <h3 class="feature-title">AI</h3>
+            <p class="feature-caption">On-device intelligence that learns your routine.</p>
+          </div>
+
+          <div class="feature reveal">
+            <span class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/></svg>
+            </span>
+            <h3 class="feature-title">Voice Assistant</h3>
+            <p class="feature-caption">Hands-free control with natural conversation.</p>
+          </div>
+
+          <div class="feature reveal">
+            <span class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10 21a2 2 0 0 0 4 0"/></svg>
+            </span>
+            <h3 class="feature-title">Reminders</h3>
+            <p class="feature-caption">Gentle prompts for the moments that matter.</p>
+          </div>
+
+          <div class="feature reveal">
+            <span class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M5 3 2 6M19 3l3 3"/></svg>
+            </span>
+            <h3 class="feature-title">Alarm</h3>
+            <p class="feature-caption">Wake to warm light, not a jarring beep.</p>
+          </div>
+
+          <div class="feature reveal">
+            <span class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            </span>
+            <h3 class="feature-title">Warm Ambient Glow</h3>
+            <p class="feature-caption">Soft 3000K illumination for a calm, premium presence.</p>
+          </div>
+
+          <div class="feature reveal">
+            <span class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </span>
+            <h3 class="feature-title">Layered Depth Display</h3>
+            <p class="feature-caption">True physical depth, not simulated.</p>
+          </div>
+
+          <div class="feature reveal">
+            <span class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v4M15 2v4M6 6h12v6a6 6 0 0 1-12 0V6zM12 18v4"/></svg>
+            </span>
+            <h3 class="feature-title">USB-C Powered</h3>
+            <p class="feature-caption">Stable and efficient power delivery.</p>
+          </div>
+
+          <div class="feature reveal">
+            <span class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/><circle cx="8" cy="6" r="2" fill="white"/><circle cx="16" cy="12" r="2" fill="white"/><circle cx="10" cy="18" r="2" fill="white"/></svg>
+            </span>
+            <h3 class="feature-title">Adjustable Brightness</h3>
+            <p class="feature-caption">Multiple levels for different environments.</p>
+          </div>
+
+          <div class="feature reveal">
+            <span class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </span>
+            <h3 class="feature-title">Real-Time Precision</h3>
+            <p class="feature-caption">Accurate timekeeping with smooth transitions.</p>
+          </div>
+
+          <div class="feature reveal">
+            <span class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg>
+            </span>
+            <h3 class="feature-title">Smart Control System</h3>
+            <p class="feature-caption">Optimized electronics for reliability and performance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ============== HOW IT WORKS ============== -->
     <section id="how-it-works" class="section-pad">
       <div class="container-page">
         <div class="mx-auto max-w-2xl text-center reveal">
           <h2 class="text-3xl font-semibold tracking-tight md:text-4xl">Deeply Engineered</h2>
           <p class="mt-4 text-base text-ink-600">
-            Each digit is built from precision-cut acrylic layers. Only one layer is illuminated at a time, creating a floating number with real physical depth.
+            Each digit is built from precision-cut transparent layers. Only one layer is illuminated at a time, creating a floating number with real physical depth.
           </p>
         </div>
 
@@ -190,6 +303,25 @@
             <div class="media-slot aspect-[4/3]">
               <img src="assets/product.png" alt="Cross-section of digit module" loading="lazy" />
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== IMAGE SLIDER ============== -->
+    <section class="section-pad">
+      <div class="container-page">
+        <div class="reveal mx-auto max-w-5xl">
+          <div class="image-slider" data-interval="1500" aria-roledescription="carousel" aria-label="invengic product gallery">
+            <div class="image-slider-track">
+              <div class="image-slider-slide is-active">
+                <img src="assets/slider-1.png" alt="Close-up of illuminated digit" loading="lazy" />
+              </div>
+              <div class="image-slider-slide">
+                <img src="assets/slider-2.png" alt="Exploded view of acrylic layers" loading="lazy" />
+              </div>
+            </div>
+            <div class="image-slider-dots" role="tablist" aria-label="Slide selector"></div>
           </div>
         </div>
       </div>
@@ -291,65 +423,6 @@
       </div>
     </section>
 
-    <!-- ============== FEATURES STRIP ============== -->
-    <section id="features" class="section-pad">
-      <div class="container-page">
-        <div class="mx-auto max-w-2xl text-center reveal">
-          <h2 class="text-3xl font-semibold tracking-tight md:text-4xl">Features</h2>
-        </div>
-
-        <div class="mt-16 grid grid-cols-2 gap-x-6 gap-y-12 sm:grid-cols-3 lg:grid-cols-6">
-          <div class="feature reveal">
-            <span class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-            </span>
-            <h3 class="feature-title">Warm Ambient Glow</h3>
-            <p class="feature-caption">Soft 3000K illumination for a calm, premium presence.</p>
-          </div>
-
-          <div class="feature reveal">
-            <span class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-            </span>
-            <h3 class="feature-title">Layered Depth Display</h3>
-            <p class="feature-caption">True physical depth, not simulated.</p>
-          </div>
-
-          <div class="feature reveal">
-            <span class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v4M15 2v4M6 6h12v6a6 6 0 0 1-12 0V6zM12 18v4"/></svg>
-            </span>
-            <h3 class="feature-title">USB-C Powered</h3>
-            <p class="feature-caption">Stable and efficient power delivery.</p>
-          </div>
-
-          <div class="feature reveal">
-            <span class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/><circle cx="8" cy="6" r="2" fill="white"/><circle cx="16" cy="12" r="2" fill="white"/><circle cx="10" cy="18" r="2" fill="white"/></svg>
-            </span>
-            <h3 class="feature-title">Adjustable Brightness</h3>
-            <p class="feature-caption">Multiple levels for different environments.</p>
-          </div>
-
-          <div class="feature reveal">
-            <span class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-            </span>
-            <h3 class="feature-title">Real-Time Precision</h3>
-            <p class="feature-caption">Accurate timekeeping with smooth transitions.</p>
-          </div>
-
-          <div class="feature reveal">
-            <span class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg>
-            </span>
-            <h3 class="feature-title">Smart Control System</h3>
-            <p class="feature-caption">Optimized electronics for reliability and performance.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ============== VIDEO SECTION ============== -->
     <section id="video" class="section-pad">
       <div class="container-page">
@@ -373,38 +446,6 @@
       </div>
     </section>
 
-    <!-- ============== COMPARE (full width, no container) ============== -->
-    <section id="compare" class="section-pad compare-section">
-      <div class="reveal mx-auto max-w-2xl text-center px-6">
-        <p class="eyebrow">Compare</p>
-        <h2 class="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">Pick the one that fits.</h2>
-      </div>
-
-      <div class="reveal mt-12 compare-table-wrap">
-        <table class="compare-table">
-          <thead>
-            <tr>
-              <th scope="col"><span class="sr-only">Feature</span></th>
-              <th scope="col"><span class="compare-model">Classic</span><span class="compare-price">₹4,999</span></th>
-              <th scope="col"><span class="compare-model">Pro</span><span class="compare-price">₹7,999</span></th>
-              <th scope="col"><span class="compare-model">Ultra</span><span class="compare-price">₹9,999</span></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><th scope="row">Time display</th><td>✓</td><td>✓</td><td>✓</td></tr>
-            <tr><th scope="row">Adjustable brightness</th><td>✓</td><td>✓</td><td>✓</td></tr>
-            <tr><th scope="row">USB-C powered</th><td>✓</td><td>✓</td><td>✓</td></tr>
-            <tr><th scope="row">Available finishings</th><td>Metallic · Wooden · Ceramic</td><td>Metallic · Wooden · Ceramic</td><td>Metallic · Wooden · Ceramic</td></tr>
-            <tr><th scope="row">Alarm</th><td>—</td><td>✓</td><td>✓</td></tr>
-            <tr><th scope="row">Timer</th><td>—</td><td>✓</td><td>✓</td></tr>
-            <tr><th scope="row">World clock</th><td>—</td><td>✓</td><td>✓</td></tr>
-            <tr><th scope="row">Bluetooth app support</th><td>—</td><td>✓</td><td>✓</td></tr>
-            <tr><th scope="row">Voice assistance</th><td>—</td><td>—</td><td>✓</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
     <!-- ============== FINAL CTA ============== -->
     <section id="cta" class="section-pad">
       <div class="container-page">
@@ -413,6 +454,7 @@
             <h2 class="text-4xl font-semibold tracking-tight md:text-5xl">Experience time,<br />redefined.</h2>
             <div class="mt-8 flex flex-wrap gap-3">
               <a href="preorder.html" class="btn btn-primary">Pre-order Now</a>
+              <a href="customize.html" class="btn btn-customize">Customize</a>
               <a href="#" class="btn btn-secondary">Get Updates</a>
             </div>
           </div>
